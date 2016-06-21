@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setTicker("This is a ticker.");
         builder.setContentIntent(getPendingIntent("This is a pending intent."));
         builder.setContentTitle("This is a title");
-        builder.setContentText("This is a content.");
+        builder.setContentText("This is a content1.");
     }
 
     PendingIntent getPendingIntent(String text){
