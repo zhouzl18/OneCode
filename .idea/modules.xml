@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/OneCode.iml" filepath="$PROJECT_DIR$/OneCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/notificationtest/notificationtest.iml" filepath="$PROJECT_DIR$/notificationtest/notificationtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smstest/smstest.iml" filepath="$PROJECT_DIR$/smstest/smstest.iml" />
     </modules>
   </component>
 </project>
