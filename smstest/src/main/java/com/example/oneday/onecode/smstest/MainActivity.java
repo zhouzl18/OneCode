@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         smsReciver = new MySMSReciver();
         registerReceiver(smsReciver, intentFilter);
 
-        requestSmsPermission();
 
     }
 
@@ -77,30 +77,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        requestSmsPermission();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(smsReciver);
         smsReciver = null;
     }
 
-    /*@Override
+    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == BaseActivity.PERMISSION_REQUEST_READ_CONTACTS){
+        if(requestCode == MainActivity.REQUEST_RECEIVE_SMS){
             Log.d(TAG, "onRequestPermissionsResult: permissions=" + permissions.toString() + "/ grantResults=" + grantResults.toString());
             if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                getContactsData();
-                contactsAdapter.notifyDataSetChanged();
+                //User granted this permission.
             }else{
                 Toast.makeText(MainActivity.this, "Until you grant permission, we can't display contacts.", Toast.LENGTH_SHORT).show();
             }
         }
-    }*/
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        //super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == REQUEST_RECEIVE_SMS){
-            Log.d(TAG, "onRequestPermissionsResult: permissions=" + permissions.toString() + "/ grantResults=" + grantResults.toString());
-        }
     }
+
 }
