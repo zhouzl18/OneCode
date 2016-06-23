@@ -10,7 +10,7 @@
 
     <TextView
         android:text="From:"
-        android:layout_width="60dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fromSender"
         app:layout_constraintLeft_toLeftOf="@+id/activity_main"
@@ -31,18 +31,20 @@
         android:layout_marginTop="16dp"
         app:layout_constraintRight_toRightOf="@+id/activity_main"
         android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fromSender"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:text="Content:"
-        android:layout_width="58dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:id="@+id/tv_content_text"
         app:layout_constraintLeft_toLeftOf="@+id/activity_main"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         app:layout_constraintTop_toBottomOf="@+id/fromSender"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="24dp" />
 
     <TextView
         android:text=""
@@ -56,4 +58,61 @@
         android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_content_text" />
+
+    <TextView
+        android:text="To:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_to"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_to" />
+
+    <EditText
+        android:id="@+id/et_to"
+        android:hint="To..."
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        app:layout_constraintLeft_toRightOf="@+id/tv_to"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintRight_toRightOf="@+id/activity_main"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintHorizontal_bias="0.29" />
+
+    <EditText
+        android:hint="Enter content..."
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/et_content"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_to"
+        android:layout_marginTop="16dp"
+        app:layout_constraintRight_toLeftOf="@+id/send"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:text="Send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/send"
+        android:onClick="sendMessage"
+        app:layout_constraintRight_toRightOf="@+id/activity_main"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_content" />
+
 </android.support.constraint.ConstraintLayout>
